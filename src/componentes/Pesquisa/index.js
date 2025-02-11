@@ -4,12 +4,16 @@ import { useState } from 'react';
 import { livros } from './dadosPesquisa';
 
 const PesquisaContainer = styled.section`
-        background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
-        color: #FFF;
+    background-image: linear-gradient(90deg, #002F52 35%, #326589 100%);
+    color: #FFF;
+    text-align: center;
+    padding: 85px 0;
+    height: 75vh;
+    width: 100%;
+
+    input:placeholder{
         text-align: center;
-        padding: 85px 0;
-        height: 100vh;
-        width: 100%;
+    }
 
 `
 
@@ -67,15 +71,15 @@ function Pesquisa(){
                     setLivrosPesquisados(resultadoPesquisa)
                 } }/>
             
-            <ColunasResultado>
+            
                 { livrosPesquisados.map( livro => (
+                <ColunasResultado>
                     <Resultado>
                         <p>{livro.nome}</p>
                         <img src={livro.src}/>
                     </Resultado>
-                
+                </ColunasResultado>
                 )) }
-            </ColunasResultado>
         </PesquisaContainer>
 
     )
